@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
 
 	has_many :course_selections
   	has_many :courses, :through=> :course_selections
+  	has_many :take_aways
 end

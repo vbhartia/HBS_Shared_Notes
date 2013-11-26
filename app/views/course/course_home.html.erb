@@ -1,0 +1,23 @@
+
+<h1>
+<%= @current_course.title %>
+</h1>
+
+<br/>
+
+<!-- Show class sessions -->
+
+<% @class_sessions_to_render = @current_course.class_sessions.all %>
+<%= render "course/shared/class_sessions"%>
+
+
+
+<!-- Show Currently enrolled Students -->
+<h3>
+	Currently Enrolled Students
+</h3>
+
+<% @users_to_render = @current_course.users %>
+<%= render "course/shared/users"%>
+
+	

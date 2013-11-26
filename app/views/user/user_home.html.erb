@@ -1,0 +1,6 @@
+<%= @user_to_render.email %>
+
+<% @courses_to_render = @user_to_render.courses.all %>
+
+<!-- Show Currently enrolled Courses -->
+<%= render "course/shared/courses"%>

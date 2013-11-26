@@ -1,0 +1,18 @@
+<h4>
+	All Class Sessions
+</h4>
+
+<% @class_sessions_to_render.each do |class_session| %>
+
+	<%unless class_session.nil? %>
+
+		<h4>
+			<%= class_session.title %>
+		</h4>
+
+		<%= class_session.take_aways.first.title %>
+				<br/>
+		<%= class_session.take_aways.first.user.email %>
+		
+	<% end %>
+<% end %>

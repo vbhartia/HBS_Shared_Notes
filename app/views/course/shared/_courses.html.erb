@@ -1,0 +1,25 @@
+<!-- Renders tables of courses -->
+
+
+<% @courses_to_render.each do |course| %>
+	<h3>
+	
+		<%= link_to course.title, course_path(course) %>
+
+	</h3>	
+
+	<br>
+
+	<%unless course.class_sessions.count == 0 %>
+
+		<h4>
+			<%= course.class_sessions.first.title %>
+		</h4>
+
+		<%= course.class_sessions.first.take_aways.first.title %>
+			<br/>
+		<%= course.class_sessions.first.take_aways.first.user.email %>
+	
+	<% end %>
+
+<% end %>

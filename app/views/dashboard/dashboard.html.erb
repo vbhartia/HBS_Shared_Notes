@@ -1,0 +1,19 @@
+<h1>
+	Dash Board
+</h1>
+
+<h2>
+	My Classes
+</h2>
+
+<h4>
+	<%= link_to 'Manage Classes', manage_courses_path %>
+
+</h4>
+
+<% @courses_to_render = current_user.courses.all %>
+
+<!-- Show Currently enrolled Courses -->
+<%= render "course/shared/courses"%>
+
+<!-- Show All Courses -->
