@@ -35,6 +35,7 @@ class CourseController < ApplicationController
   	class_session_to_add = ClassSession.new
   	class_session_to_add.title = params[:session_title]
   	class_session_to_add.description = params[:description]
+  	class_session_to_add.class_date = DateTime.parse(params[:class_date])
 
   	class_session_to_add.course_id = course_id
 

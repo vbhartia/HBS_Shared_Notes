@@ -1,29 +1,65 @@
 <!-- Renders tables of courses -->
 
-
 <% @courses_to_render.each do |course| %>
-	<h3>
+
+	<div class = "well">
+		<h3>
+			<%= link_to course.title, course_path(course) %>
+		</h3>
+			<hr>	
+
+		<%unless course.class_sessions.count == 0 %>
+
+			<h4>
+				<% @week_day = course.class_sessions.first.class_date.wday %>
+
+				<% case @week_day %>
+					<% when 1 %>
+						Monday
+					<% when 2 %>
+						Tuesday
+					<% when 3 %>
+						Wednesday
+					<% when 4 %>
+						Thursday
+					<% when 5 %>
+						Friday
+					<% when 6 %>
+						Saturday
+					<% when 7 %>
+						Sunday
+				<% end %>
+
+				<%= course.class_sessions.first.created_at.to_date %>
+
+
+				<%= link_to course.class_sessions.first.title, class_session_home_path(course.id, course.class_sessions.first.id) %>
+			</h4>
+
+			<%unless course.class_sessions.first.take_aways.count == 0 %>
+
+				<div class='container'>
+					<h5>
+						<%= course.class_sessions.first.take_aways.first.title %>
+					</h5>
+
+
+					<div class='pull-right'>
+						<%= course.class_sessions.first.take_aways.first.user.email %>				
+
+					</div>
+
+				</div>	
+
+				<div class='take_away_list'>
+
+					<%= course.class_sessions.first.take_aways.first.content.html_safe %>
+				</div>
+
+
 	
-		<%= link_to course.title, course_path(course) %>
-
-	</h3>	
-
-	<br>
-
-	<%unless course.class_sessions.count == 0 %>
-
-		<h4>
-			<%= course.class_sessions.first.title %>
-		</h4>
-
-		<%unless course.class_sessions.first.take_aways.count == 0 %>
-
-
-			<%= course.class_sessions.first.take_aways.first.title %>
-			<br/>
-			<%= course.class_sessions.first.take_aways.first.user.email %>
-	
+			<% end %>
 		<% end %>
-	<% end %>
+	</div>
 
 <% end %>

@@ -12,7 +12,20 @@ Add a class session test
 	<br/>	
 
 	Description
-	<input name="Description" type="text" />
+	<input name="description" type="text" />
+
+	<br/>
+
+	Clsss Date
+
+	<input name="class_date" type="text" data-behaviour='datepicker' >
+
+	<script type="text/javascript">
+  		$(document).ready(function(){
+    	$('[data-behaviour~=datepicker]').datepicker();
+  		})
+	</script>
+
 
 
 
