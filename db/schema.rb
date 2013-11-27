@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131126155430) do
+ActiveRecord::Schema.define(:version => 20131127061028) do
 
   create_table "class_sessions", :force => true do |t|
     t.string   "title"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20131126155430) do
 
   create_table "take_aways", :force => true do |t|
     t.string   "title"
-    t.text     "description"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "class_session_id"
     t.datetime "created_at",       :null => false

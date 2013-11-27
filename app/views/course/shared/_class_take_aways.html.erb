@@ -1,0 +1,13 @@
+
+<% @class_session.take_aways.each do |take_away| %>
+
+	<h2>
+		<%= take_away.title %>
+	</h2>
+
+		<%= take_away.content.html_safe %>
+
+	<br/>	
+		<%= take_away.user.email %>
+
+<% end %>

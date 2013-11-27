@@ -1,0 +1,22 @@
+Add a class session test
+
+<br/>
+
+<%= form_tag(add_class_session_path, method: "post", :id => @current_course.id) do %>
+
+	<input name="course_to_add" type="hidden" value="<%= @current_course.id %>" />
+
+	Session Title
+	<input name="session_title" type="text" />
+
+	<br/>	
+
+	Description
+	<input name="Description" type="text" />
+
+
+
+  <button type="submit" class="btn-large btn-success" title="Add the selected courses below to your registered courses">Add a class session
+  </button>
+
+<% end %>

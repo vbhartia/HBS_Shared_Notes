@@ -16,10 +16,14 @@
 			<%= course.class_sessions.first.title %>
 		</h4>
 
-		<%= course.class_sessions.first.take_aways.first.title %>
+		<%unless course.class_sessions.first.take_aways.count == 0 %>
+
+
+			<%= course.class_sessions.first.take_aways.first.title %>
 			<br/>
-		<%= course.class_sessions.first.take_aways.first.user.email %>
+			<%= course.class_sessions.first.take_aways.first.user.email %>
 	
+		<% end %>
 	<% end %>
 
 <% end %>

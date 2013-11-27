@@ -10,11 +10,23 @@ SharedNotes::Application.routes.draw do
   get 'dashboard' => "dashboard#dashboard", as: 'dashboard'
 
   #********** Courses ************#
-  #* Add/Remove Course Page *#
+  #* Manage Courses Page *#
   get 'courses/manage' => "course#manage_courses", as: 'manage_courses'
+
+  post 'courses/add' => "course#add_courses", as: 'add_courses'
+
+  #* Add Course Session *#
+  post 'courses/add_class_session' => "course#add_class_session", as: 'add_class_session'
 
   #* Show Course Home *#
   get 'courses/:id' => "course#course_home", as: 'course'
+
+  #* Show Class Session Home *#
+  get 'courses/:course_id/:class_session_id' => "course#class_session_home", as: 'class_session_home'
+
+  #* Add Course Take Aways *#
+  post 'courses/class_session/add_take_away' => "course#add_take_away", as: 'add_take_away'
+
 
 
   #********** Users ************#
