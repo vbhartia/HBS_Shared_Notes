@@ -23,13 +23,13 @@
 		<tr>
 			<% @count = 0 %>
 
-			<% Dir.foreach(Rails.root.to_s + "/public/assets/profile_pics").drop(1).each_slice(2) do |fname| %>
+			<% Dir.foreach(Rails.root.to_s + "/public/assets/profile_pics").drop(1).drop(1).each_slice(2) do |fname| %>
 
 				<% @count = @count + 1 %>
 
 				<td>
 					<center>
-					<%= image_tag("profile_pics/" + fname[1].to_s, size: "128x128", class: "img-rounded") %>
+					<%= image_tag("profile_pics/" + fname[0].to_s, size: "128x128", class: "img-rounded") %>
 
 					<br/>
 
