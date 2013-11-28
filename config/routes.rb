@@ -29,8 +29,9 @@ SharedNotes::Application.routes.draw do
   post 'courses/class_session/add_take_away' => "course#add_take_away", as: 'add_take_away'
 
 
-
   #********** Users ************#
   get 'users/:id' => "user#user_home", as: 'user'
+
+  post 'users/update_profile_pic' => "user#update_profile_pic", as: 'update_profile_pic'
 
 end

@@ -1,0 +1,53 @@
+
+<% @col_num = 5 %>
+
+<h2>
+	Current Profile Picture
+</h2>
+
+	<%= image_tag(current_user.profile_pic_url) %>
+
+<br/>
+
+<hr>
+
+<br/>
+
+<%= form_tag(update_profile_pic_path, method: "post") do %>
+	<%= submit_tag("Change Picture") %>
+
+	<br/>
+		<br/>
+
+	<table class='table table-bordered'>
+		<tr>
+			<% @count = 0 %>
+
+			<% Dir.foreach(Rails.root.to_s + "/public/assets/profile_pics").drop(1).each_slice(2) do |fname| %>
+
+				<% @count = @count + 1 %>
+
+				<td>
+					<center>
+					<%= image_tag("profile_pics/" + fname[1].to_s, size: "128x128", class: "img-rounded") %>
+
+					<br/>
+
+						<%= radio_button_tag("default_pic", "profile_pics/" + fname[1].to_s) %>
+					</center>
+
+				</td>
+
+				<% if (@count == @col_num) %>
+					</tr>
+					<tr>
+					<% @count = 0 %>
+				<% end %>
+
+			<% end %>
+		
+		</tr>
+
+	</table>
+
+<% end %>

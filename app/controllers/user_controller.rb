@@ -26,4 +26,16 @@ class UserController < ApplicationController
   		redirect_to dashboard_path
 	end
 
+	def update_profile_pic
+		puts '*******************'
+		puts params[:default_pic]
+
+		current_user.profile_pic_url = params[:default_pic]
+
+		current_user.save
+	  	
+	  	redirect_to edit_user_registration_path
+
+	end
+
 end
