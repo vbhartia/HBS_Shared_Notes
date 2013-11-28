@@ -17,6 +17,7 @@ end
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 	
 #gem "less-rails"	
 gem 'twitter-bootstrap-rails'
@@ -36,6 +37,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
+gem 'jquery-datatables-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

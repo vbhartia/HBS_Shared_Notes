@@ -38,18 +38,58 @@
           <div class="container nav-collapse">
             
             <% if user_signed_in? %>
-              <ul class="nav pull-right">
-                <li><%= link_to "Sign Out", destroy_user_session_path  %></li>
+
+              <%= link_to "My Classes", dashboard_path  %>
+
+
+
+              <ul class="nav nav-pills pull-right">
+                
+                <div class="nav">
+                  <%=image_tag(current_user.profile_pic_url, height: '48', width: '48', class: "img-rounded") %>
+                </div>
+
+                <li class="dropdown">
+
+                  <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">
+                      <%= current_user.first_name + " " + current_user.last_name %> 
+                      <b class="caret"></b>
+                  </a>
+
+                  <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                    
+                    <li role="presentation">
+                      <a role="menuitem" tabindex="-1" href="<%= destroy_user_session_path %>">
+                         <b class="icon-minus-sign"></b>
+
+                        Log Out
+                      </a>
+                    </li>
+                    
+                    <li role="presentation">
+                      <a role="menuitem" tabindex="-1" href="<%= edit_user_registration_path %>">
+                        <b class="icon-edit"></b>
+                         User Settings
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
               </ul>
+                  
 
             <% else %>
+
               <ul class="nav pull-right">
                 <li><%= link_to "Login", new_user_session_path  %></li>
                 <li><%= link_to "Sign Up", new_user_registration_path  %></li>
               </ul>
+            
             <% end %>
           
           </div><!--/.nav-collapse -->
+
         </div>
       </div>
     </div>
@@ -78,3 +118,7 @@
 
   </body>
 </html>
+
+<script>
+$('.dropdown-toggle').dropdown()
+</script>
