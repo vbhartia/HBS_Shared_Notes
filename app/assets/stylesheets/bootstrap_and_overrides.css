@@ -8,15 +8,15 @@
 
 .crop_baker 
 {
-    width: 1200px;
-    height: 600px;
-    margin: -200px 0 0 0px;
+    width: 1500px;
+    height: 700px;
+    margin: -350px 100px 0 0px;
     overflow: hidden;
 }
 
 .crop_deans
 {
-    width: 1200px;
+    width: 1500px;
     height: 600px;
     margin: 0px 0 0 0px;
     overflow: hidden;
@@ -24,7 +24,7 @@
 
 .crop_class_room
 {
-    width: 1200px;
+    width: 1500px;
     height: 600px;
     margin: 0px 0 0 0px;
     overflow: hidden;

@@ -5,25 +5,24 @@ class UserController < ApplicationController
 	end
 
 	def oauth_create
-		#render :text => request.env["omniauth.auth"]["info"]["image"].to_yaml
 
-		auth = request.env["omniauth.auth"] 
-
-		current_user = User.create(:provider => auth['provider'], :uid => auth['uid'], :profile_pic_url => auth["info"]["image"])
-
-		current_user.save
-
-		#render :text => request.env["image"]
-
-
-	    #
-	    
-	    #render :text => auth['image']
-
-	    #current_user(:provider => auth['provider'], :uid => auth['uid'])
-  		#flash[:notice] = "Authentication successful."
-  	
-  		redirect_to dashboard_path
+	  omniauth = request.env["omniauth.auth"]
+	  authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
+	  if authentication
+	    flash[:notice] = "Signed in successfully."
+	    sign_in_and_redirect(:user, authentication.user)
+	  elsif current_user
+	    current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
+	    flash[:notice] = "Authentication successful."
+	    redirect_to authentications_url
+	  else
+	    user = User.new
+	    user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
+	    user.save(:validate => false)
+	    flash[:notice] = "Signed in successfully."
+	    sign_in_and_redirect(:user, user)
+	  end
+	  
 	end
 
 	def update_profile_pic

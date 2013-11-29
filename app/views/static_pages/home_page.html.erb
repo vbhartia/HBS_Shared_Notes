@@ -1,17 +1,56 @@
+<link href="http://jschr.github.io/textillate/assets/animate.css" rel="stylesheet">
+
+<script src="http://jschr.github.io/textillate/assets/jquery.lettering.js"></script>
+
+<script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
+
+<center>
+	<h1 class="tlt" style="font-size: 50px;">
+		HBS Shared Notes
+	</h1>	
+	<h4 class="sub-title" style="visibility: hidden" >
+
+		Learn together and actually remember what happens in class
+	</h4>
+</center>
+
+<script>
+
+	$(function () {
+	    $('.tlt').textillate();
+
+	    $('.sub-title').textillate({
+	    		    initialDelay: 1500
+	    });
+
+
+
+	})
+
+</script>
+
+<br/>
+
+<br/>
+
+<br/>	
+
+
 	<div id="myCarousel" class="carousel slide">
                 <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                   <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                  <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="2" class=""></li>
                 </ol>
+
                 <div class="carousel-inner">
-                  <div class="item">
+                  <div class="item active">
               		<div class="crop_baker">
 	                    <img src="assets/baker_lib.jpg" alt="">
                     </div>
                     <div class="carousel-caption">
-                      <h4>First Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <h4>Easily share notes across your entire class</h4>
+                      <p></p>
                     </div>
                   </div>
                   <div class="item">
@@ -19,17 +58,17 @@
                     	<img src="assets/class_room.jpeg" alt="">
                 	</div>
                     <div class="carousel-caption">
-                      <h4>Second Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <h4>Keep a record of what was actually discussed in class</h4>
+                      <p>Make writing papers a whole lot easier</p>
                     </div>
                   </div>
-                  <div class="item active">
+                  <div class="item">
               		<div class="crop_baker">
                     	<img src="assets/deans_house.jpg" alt="">
                     </div>
                     <div class="carousel-caption">
-                      <h4>Third Thumbnail label</h4>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <h4>Allow the best takeaways to be surfaced</h4>
+                      <p>Vote on your classmates takeaways.</p>
                     </div>
                   </div>
                 </div>
@@ -39,25 +78,26 @@
 
               <script>
               $('.carousel').carousel({
-  interval: 2000
-})
+  				interval: 4000
+				})
               </script>
 
-
-              <div class="row">
+  <div class='container'>	
+      <div class="row">
         <div class="span4">
-          <h2>Heading</h2>
+          <h2>Collaborate on takeaways from each class</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn" href="#">View details »</a></p>
         </div>
         <div class="span4">
-          <h2>Heading</h2>
+          <h2>Remember what happens in your classes</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn" href="#">View details »</a></p>
        </div>
         <div class="span4">
-          <h2>Heading</h2>
+          <h2>See what classes your friends are taking</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn" href="#">View details »</a></p>
         </div>
       </div>
+  </div>
