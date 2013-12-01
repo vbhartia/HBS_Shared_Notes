@@ -12,6 +12,11 @@ class UserController < ApplicationController
 		render :text => request.env["omniauth.auth"].to_yaml
 	end
 
+	def oauth_facebook_create
+		render :text => request.env["omniauth.auth"].to_yaml
+
+	end
+
 	def oauth_create
 
 	  omniauth = request.env["omniauth.auth"]
@@ -20,14 +25,13 @@ class UserController < ApplicationController
 	    flash[:notice] = "Signed in successfully."
 	    sign_in_and_redirect(:user, authentication.user)
 	  elsif current_user
-	    current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
+	    current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'], :profile_pic_url_from_provider => omniauth['info']['image'])
 	    flash[:notice] = "Authentication successful."
-	    redirect_to authentications_url
+	    redirect_to dashboard_path
 	  else
 	    user = User.new
 		user.apply_omniauth(omniauth)
-     	puts 'Pre email ***********************'
-		puts omniauth['email']
+
 	    if user.save(:validate => false)
 		  flash[:notice] = "Signed in successfully."
 		  sign_in_and_redirect(:user, user)

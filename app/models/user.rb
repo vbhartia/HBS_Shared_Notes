@@ -30,7 +30,9 @@ class User < ActiveRecord::Base
   def apply_omniauth(omniauth)
     authentications.build(
       :provider => omniauth['provider'], 
-      :uid => omniauth['uid'])
+      :uid => omniauth['uid'],
+      :profile_pic_url_from_provider => omniauth['info']['image'])
+
 
     self.first_name = omniauth['info']['name']
     self.username = omniauth['info']['nickname']

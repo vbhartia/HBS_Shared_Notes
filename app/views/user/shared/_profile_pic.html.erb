@@ -1,8 +1,6 @@
-<% @col_num = 5 %>
+<% @default_profile_pics = Array.new()
 
-<% @default_profile_pics = Array.new() %> 
-
-<% 	@default_profile_pics[0] = 'profile_pics/alien.png'
+	@default_profile_pics[0] = 'profile_pics/alien.png'
 	@default_profile_pics[1] = 'profile_pics/bender.png' 
 	@default_profile_pics[2] = 'profile_pics/betty-boop2.png' 
 	@default_profile_pics[3] = 'profile_pics/d_silhouette stewie.jpg' 
@@ -26,7 +24,12 @@
 	@default_profile_pics[21] = 'profile_pics/playboy.png' 
 	@default_profile_pics[22] = 'profile_pics/spiderman.png' 
 	@default_profile_pics[23] = 'profile_pics/spock.jpg'
+
 %>
+
+
+<% @col_num = 5 %>
+
 
 <h2>
 	Current Profile Picture
@@ -34,6 +37,13 @@
 
 	<%= image_tag(current_user.profile_pic_url) %>
 
+<br/>
+
+<hr>
+
+<h2>
+	Choose a profile from 3rd party authorization
+</h2>
 <br/>
 
 <hr>

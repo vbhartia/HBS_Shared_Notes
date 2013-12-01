@@ -136,7 +136,7 @@
 
     <% end %>
 
-
+<% if !user_signed_in? %>
 <!-- Login -->
 <div class="modal fade modal-login" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
   <div class="modal-dialog">
@@ -171,6 +171,8 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<% end %> 
 
 
   </body>

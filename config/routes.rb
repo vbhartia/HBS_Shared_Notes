@@ -2,7 +2,9 @@ SharedNotes::Application.routes.draw do
 
   get '/auth/twitter/callback' => 'user#oauth_create'
 
-  devise_for :users
+  get '/auth/facebook/callback' => 'user#oauth_facebook_create'
+
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
   #********** Static Pages ************#
   root :to => "static_pages#home_page"

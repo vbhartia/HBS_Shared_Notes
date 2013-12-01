@@ -1,3 +1,26 @@
-Test!
 
-<%= current_user.authentications.all %>
+<br/>
+
+<% if !current_user.authentications.first.nil? %>
+
+	<h3>
+		<%= current_user.authentications.first.provider %>
+	</h3>
+	<br/>
+
+	Profile Picture from <%= current_user.authentications.first.provider %>
+
+	<br/>
+
+
+	<%= image_tag(current_user.authentications.first.profile_pic_url_from_provider) %>
+
+
+	<hr/>
+
+<% else %>
+	Add a 3rd party register
+
+	<%= link_to 'Twitter Login', '/auth/twitter' %>
+
+<% end %>

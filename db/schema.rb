@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(:version => 20131128082445) do
   create_table "authentications", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
+    t.string   "profile_pic_url_from_provider"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "class_sessions", :force => true do |t|
