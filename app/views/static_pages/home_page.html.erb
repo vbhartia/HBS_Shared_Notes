@@ -4,26 +4,26 @@
 
 <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
 
+
+
 <center>
 	<h1 class="tlt" style="font-size: 50px;">
 		HBS Shared Notes
 	</h1>	
 	<h4 class="sub-title" style="visibility: hidden" >
-
-		Learn together and actually remember what happens in class
+  		Learn together and actually remember what happens in class
 	</h4>
 </center>
 
 <script>
 
 	$(function () {
-	    $('.tlt').textillate();
+	    $('.tlt').textillate({ in: { effect: 'flipInY' }});
 
 	    $('.sub-title').textillate({
-	    		    initialDelay: 1500
+          in: { effect: 'bounceInDown' },
+  		    initialDelay: 1500
 	    });
-
-
 
 	})
 
@@ -86,18 +86,89 @@
       <div class="row">
         <div class="span4">
           <h2>Collaborate</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details »</a></p>
+          <p>Easily share and create notes with your entire class, in a central, organized place. Vote on which class notes provide the most insight. </p>
+          <p><button class="btn" data-toggle="modal" data-target="#collaborate">View details »</button></p>
         </div>
         <div class="span4">
           <h2>Remember</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details »</a></p>
-       </div>
+          <p>Remember the topic and discussion from every class long after the class is over. </p>
+
+          <p>
+            <button class="btn" data-toggle="modal" data-target="#remember">View details »</button>
+          </p>
+        </div>
+
         <div class="span4">
           <h2>Discover</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details »</a></p>
+          <p>See what classes your friends are taking and what is being discussed in their classes, even in classes you are not in</p>
+          <p>
+            <button class="btn" data-toggle="modal" data-target="#discover">View details »</button>
+          </p>
         </div>
       </div>
   </div>
+
+
+
+
+<!-- Modal -->
+
+<!-- Collaborate -->
+<div class="modal fade" id="collaborate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Collaborate with your Classmates</h4>
+      </div>
+
+      <div class="modal-body">
+        Contribute to the class discussion for any class
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Remember -->
+<div class="modal fade" id="remember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Remember what happens in your classes</h4>
+      </div>
+
+      <div class="modal-body">
+        Everything is archieved for easy access later
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Discover -->
+<div class="modal fade" id="discover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Discover what your friends are learning!</h4>
+      </div>
+
+      <div class="modal-body">
+        See what classes your friends are taking and what is being discussed in those classes!
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

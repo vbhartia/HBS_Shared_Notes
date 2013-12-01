@@ -82,8 +82,17 @@
             <% else %>
 
               <ul class="nav pull-right">
-                <li><%= link_to "Login", new_user_session_path  %></li>
-                <li><%= link_to "Sign Up", new_user_registration_path  %></li>
+                <li>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#login">
+                    Login
+                  </button>
+                </li>
+                <li>
+                  <button class="btn btn-primary" onclick="window.location.href='<%= new_user_registration_path %>'">
+                    Sign Up
+                  </button> 
+                </li>
+
               </ul>
             
             <% end %>
@@ -125,10 +134,44 @@
 
     </div> <!-- /container -->
 
-
-
-
     <% end %>
+
+
+<!-- Login -->
+<div class="modal fade modal-login" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+
+      <div class="modal-body">
+        Login using your email and password, or login via a 3rd party system
+
+        <br/>
+
+        <div class='row'>
+          <div class='span4'>
+            <%= render "devise/shared/login" %>
+          </div>
+            <div class='span3'>
+
+              <br/>
+              <br/>
+
+              <%= link_to 'Twitter Login', '/auth/twitter' %>
+
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
   </body>
 </html>
