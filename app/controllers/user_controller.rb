@@ -4,6 +4,14 @@ class UserController < ApplicationController
 		@user_to_render = User.find(params[:id])
 	end
 
+	def oauth_test
+		puts '*********************'
+		puts request.env["omniauth.auth"]['info']['name']
+		puts request.env["omniauth.auth"]['info']['nickname']
+		puts request.env["omniauth.auth"]['info']['image']
+		render :text => request.env["omniauth.auth"].to_yaml
+	end
+
 	def oauth_create
 
 	  omniauth = request.env["omniauth.auth"]
@@ -17,12 +25,20 @@ class UserController < ApplicationController
 	    redirect_to authentications_url
 	  else
 	    user = User.new
-	    user.authentications.build(:provider => omniauth ['provider'], :uid => omniauth['uid'])
-	    user.save(:validate => false)
-	    flash[:notice] = "Signed in successfully."
-	    sign_in_and_redirect(:user, user)
+		user.apply_omniauth(omniauth)
+     	puts 'Pre email ***********************'
+		puts omniauth['email']
+	    if user.save(:validate => false)
+		  flash[:notice] = "Signed in successfully."
+		  sign_in_and_redirect(:user, user)
+		else
+		  session[:omniauth] = omniauth.except('extra')
+
+		  puts 'here ***********************'
+
+		  redirect_to new_user_registration_url
+		end
 	  end
-	  
 	end
 
 	def update_profile_pic
@@ -31,7 +47,7 @@ class UserController < ApplicationController
 
 		current_user.profile_pic_url = params[:default_pic]
 
-		current_user.save
+		current_user.save(:validate => false)
 	  	
 	  	redirect_to edit_user_registration_path
 

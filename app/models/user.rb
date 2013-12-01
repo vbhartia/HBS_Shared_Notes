@@ -19,11 +19,22 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
 	has_many :course_selections
-  	has_many :courses, :through=> :course_selections
-  	has_many :take_aways
-  	has_many :authentications
+	has_many :courses, :through=> :course_selections
+	has_many :take_aways
+	has_many :authentications
 
 	def password_required?
   		(authentications.empty? || !password.blank?) && super
 	end
+
+  def apply_omniauth(omniauth)
+    authentications.build(
+      :provider => omniauth['provider'], 
+      :uid => omniauth['uid'])
+
+    self.first_name = omniauth['info']['name']
+    self.username = omniauth['info']['nickname']
+    self.profile_pic_url = omniauth['info']['image']
+
+  end
 end
