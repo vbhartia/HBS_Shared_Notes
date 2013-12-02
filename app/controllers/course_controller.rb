@@ -23,6 +23,9 @@ class CourseController < ApplicationController
 
   	end
   	flash.alert = flash_notice
+
+    UserMailer.class_notifications.deliver
+
   	redirect_to dashboard_path
   end
 

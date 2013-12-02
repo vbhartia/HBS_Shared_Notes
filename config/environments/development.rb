@@ -34,4 +34,17 @@ SharedNotes::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+  address: "smtp.mandrillapp.com",
+  port: 587,
+  domain: "0.0.0.0:3000",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: 'app19851907@heroku.com',
+  password: 'mgYLfJTSlKfbknu99td7wg'
+}
 end
