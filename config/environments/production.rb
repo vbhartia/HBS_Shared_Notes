@@ -75,4 +75,5 @@ SharedNotes::Application.configure do
   enable_starttls_auto: true,
   user_name: 'app19851907@heroku.com',
   password: 'mgYLfJTSlKfbknu99td7wg'
+}
 end
