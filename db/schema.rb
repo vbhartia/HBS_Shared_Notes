@@ -69,8 +69,7 @@ ActiveRecord::Schema.define(:version => 20131128082445) do
     t.string   "first_name",             :default => "", :null => false
     t.string   "last_name",              :default => "", :null => false
     t.string   "profile_pic_url"
-    t.string   "provider"
-    t.string   "uid"
+    t.boolean  "receive_emails"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

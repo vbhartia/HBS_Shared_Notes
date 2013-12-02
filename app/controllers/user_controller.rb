@@ -14,11 +14,9 @@ class UserController < ApplicationController
 
 	def oauth_facebook_create
 		render :text => request.env["omniauth.auth"].to_yaml
-
 	end
 
 	def oauth_create
-
 	  omniauth = request.env["omniauth.auth"]
 	  authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
 	  if authentication
@@ -46,9 +44,6 @@ class UserController < ApplicationController
 	end
 
 	def update_profile_pic
-		puts '*******************'
-		puts params[:default_pic]
-
 		current_user.profile_pic_url = params[:default_pic]
 
 		current_user.save(:validate => false)

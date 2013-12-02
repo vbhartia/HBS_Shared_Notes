@@ -61,12 +61,21 @@ class CourseController < ApplicationController
 
   	take_away_to_add = TakeAway.new
   	take_away_to_add.title = params[:take_away_title]
-	take_away_to_add.content = params[:content]
+	  take_away_to_add.content = params[:content]
 
   	take_away_to_add.class_session_id = class_session_id
   	take_away_to_add.user_id = current_user.id
 
   	take_away_to_add.save
+
+    course_to_update = Course.find(course_id)
+
+    #send emails
+    course_to_update.users.each do |enrolled_student|
+      if enrolled_student.receive_emails
+        ClassNotificationMailer.new_take_away(course_to_update, take_away_to_add, enrolled_student).deliver
+      end
+    end
 
   	redirect_to class_session_home_path(course_id, class_session_id)
 	

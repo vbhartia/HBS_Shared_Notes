@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, 
   				  :password, 
   				  :password_confirmation, 
+            :receive_emails,
   				  :remember_me,
   				  :first_name,
   				  :last_name,

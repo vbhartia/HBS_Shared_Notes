@@ -15,7 +15,7 @@
       Edit Profile Picture
     </a>
   </li>
-  
+
   <li class="">
     <a href="#3rd_party_auth" data-toggle="tab">
       3rd Party Connections
@@ -44,8 +44,6 @@
   <div class="tab-pane fade" id="profile_pic">
     Choose your profile pic here.
 
-
-
     <%= render "user/shared/profile_pic" %>
 
     <br/>
@@ -56,7 +54,7 @@
             
   <div class="tab-pane fade" id="notification_settings">
     Receive email for every update
-    <br/>
+    <%= render "user/shared/user_notification_setting" %>
   </div>
             
   <div class="tab-pane fade active in" id="user_settings">

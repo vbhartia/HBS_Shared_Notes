@@ -10,10 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :last_name,          :null => false, :default => ""
       t.string :profile_pic_url
 
-      #Oauth Authentication
-      t.string :provider
-      t.string :uid
-
+      ## Email Notification Settings
+      t.boolean :receive_emails
 
       ## Recoverable
       t.string   :reset_password_token
