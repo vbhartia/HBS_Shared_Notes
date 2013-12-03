@@ -3,62 +3,86 @@
 <% @courses_to_render.each do |course| %>
 
 	<div class = "well">
-		<h3>
-			<%= link_to course.title, course_path(course) %>
-		</h3>
-			<hr>	
+		<table>
+			<tr>
+				<td colspan = "3">
+					<span class="course-title" >
+						<%= link_to course.title, course_path(course) %>
+					</span>
+				</td>
+			</tr>
 
-		<%unless course.class_sessions.count == 0 %>
-
-			<h4>
-				<% @week_day = course.class_sessions.first.class_date.wday %>
-
-				<% case @week_day %>
-					<% when 1 %>
-						Monday
-					<% when 2 %>
-						Tuesday
-					<% when 3 %>
-						Wednesday
-					<% when 4 %>
-						Thursday
-					<% when 5 %>
-						Friday
-					<% when 6 %>
-						Saturday
-					<% when 7 %>
-						Sunday
-				<% end %>
-
-				<%= course.class_sessions.first.created_at.to_date %>
+			<tr>
+				<td>
+					<b>Professor:</b> <%= course.faculty %>
+				</td>
+				<td>
+					<b>Day, Time:</b> <%= course.day %>, <%= course.time %>
+				</td>
+				<td>
+					<b>Section:</b> <%= course.section %>
+				</td>
+			</tr>
+		</table>
+		<hr/>	
 
 
-				<%= link_to course.class_sessions.first.title, class_session_home_path(course.id, course.class_sessions.first.id) %>
-			</h4>
+		<!-- Render class session -->	
+		<% unless course.class_sessions.count == 0 %>
+			<div class ='class_session_in_course_view' >
 
-			<%unless course.class_sessions.first.take_aways.count == 0 %>
+				<% @class_session_to_render = course.class_sessions.first %>
 
-				<div class='container'>
-					<h5>
-						<%= course.class_sessions.first.take_aways.first.title %>
-					</h5>
+				<%= link_to to_day_of_week_and_date(@class_session_to_render.class_date), class_session_home_path(course.id, @class_session_to_render.id) %>
+				<br/>
 
 
-					<div class='pull-right'>
-						<%= course.class_sessions.first.take_aways.first.user.email %>				
+				<h4>
+				<%= link_to @class_session_to_render.title, class_session_home_path(course.id, @class_session_to_render.id) %>	
+				</h4>
 
+				<hr/>
+
+				<% unless @class_session_to_render.take_aways.count == 0 %>
+					<% @take_away_to_render = @class_session_to_render.take_aways.first %>
+
+					<div class = 'key_take_away' >
+						<div class='pull-right'>
+
+							<%= link_to(user_path(@take_away_to_render.user.id)) do %>
+
+								<%= image_tag(@take_away_to_render.user.profile_pic_url, height: '48', width: '48', class: "img-rounded") %>
+
+								<%= @take_away_to_render.user.first_name %>
+
+								<%= @take_away_to_render.user.last_name %>
+
+							 <% end %>
+
+						</div>
+
+
+						<h5>
+							<%= @take_away_to_render.title %>
+						</h5>
+						<span>
+							<%= time_tag(@take_away_to_render.created_at, :format=>'%B %d, %Y %l:%M %p') %>
+						</span>
+
+
+
+						<hr/>
+						
+
+						<div class='take_away_list'>
+							<%= @take_away_to_render.content.html_safe %>
+						</div>
 					</div>
 
-				</div>	
 
-				<div class='take_away_list'>
-
-					<%= course.class_sessions.first.take_aways.first.content.html_safe %>
-				</div>
-
-
-	
-			<% end %>
+		
+				<% end %>
+			</div>
 		<% end %>
 	</div>
 
