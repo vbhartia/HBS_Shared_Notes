@@ -13,14 +13,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   end
 
-  def update
-  	
-  	@user.save(:validate => false)
-  	super
-
-  end
-
-
   private
   def build_resource(*args)
     super

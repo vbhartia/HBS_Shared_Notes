@@ -2,34 +2,50 @@ Add a class session test
 
 <br/>
 
-<%= form_tag(add_class_session_path, method: "post", :id => @current_course.id) do %>
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        
+        <button class="btn btn-success">
+        	+ Add a new class session
+      	</button>
+     
+      </a>
+    </div>
 
-	<input name="course_to_add" type="hidden" value="<%= @current_course.id %>" />
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
 
-	Session Title
-	<input name="session_title" type="text" />
+		<%= form_tag(add_class_session_path, method: "post", :id => @current_course.id) do %>
 
-	<br/>	
+			<input name="course_to_add" type="hidden" value="<%= @current_course.id %>" />
 
-	Description
-	<input name="description" type="text" />
+			Session Title
+			<input name="session_title" type="text" />
 
-	<br/>
+			<br/>	
 
-	Clsss Date
+			Description
+			<input name="description" type="text" />
 
-	<input name="class_date" type="text" data-behaviour='datepicker' >
+			<br/>
 
-	<script type="text/javascript">
-  		$(document).ready(function(){
-    	$('[data-behaviour~=datepicker]').datepicker();
-  		})
-	</script>
+			Clsss Date
 
+			<input name="class_date" type="text" data-behaviour='datepicker' >
 
+			<script type="text/javascript">
+		  		$(document).ready(function(){
+		    	$('[data-behaviour~=datepicker]').datepicker();
+		  		})
+			</script>
 
+		  <button type="submit" class="btn-large btn-success" title="Add the selected courses below to your registered courses">Add a class session
+		  </button>
 
-  <button type="submit" class="btn-large btn-success" title="Add the selected courses below to your registered courses">Add a class session
-  </button>
-
-<% end %>
+		<% end %>
+	</div>
+</div>
+</div>
+</div>
