@@ -1,9 +1,7 @@
-
-<h1>
-<%= @current_course.title %>
-</h1>
-
-<br/>
+<%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', @current_course.title], 
+				:nav_urls => nav_urls_array = [dashboard_path, course_path(@current_course)]
+				} 
+%>
 
 <!-- Show class sessions -->
 
@@ -21,7 +19,7 @@
 
 
 <!-- Show Currently enrolled Students -->
-<h3>
+<h3>	
 	Currently Enrolled Students
 </h3>
 

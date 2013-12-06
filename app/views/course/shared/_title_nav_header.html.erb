@@ -1,0 +1,26 @@
+<h2>
+	<%= nav_title.last %>
+</h2>
+
+<ol class="breadcrumb">
+	<% nav_title.each_with_index do |item, index|%>
+		<% if index == 0 %>
+
+  		<li>
+  			<a href="<%= nav_urls[index] %>"><%= item %></a>
+  		</li>
+
+  		<% else %>
+  		<li>
+  			>> <a href="<%= nav_urls[index] %>"><%= item %></a>
+  		</li>
+
+  		<% end %>
+
+
+	<% end %>
+
+</ol>
+
+<hr/>
+<br/>
