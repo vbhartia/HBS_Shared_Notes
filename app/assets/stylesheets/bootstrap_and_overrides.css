@@ -52,3 +52,21 @@
 .box-shadow {
   box-shadow: 0px 10px 15px #888888;
 }
+
+.light_blue_background {
+  background-color: #F7FFFF
+}
+
+.padding-10px {
+  padding: 10px;
+}
+
+.margin-10px {
+  margin: 10px;
+}
+
+.panel_border {
+  border-radius: 10px;
+  border-color: black;
+  border-width: 10px;
+}
