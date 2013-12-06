@@ -1,11 +1,9 @@
 <%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', 
-				@course.title, to_day_of_week_and_date(@class_session.class_date) + ' ' +
+				@course.title, to_day_of_week_and_date(@class_session.class_date) + ': ' +
 				@class_session.title], 
 				:nav_urls => nav_urls_array = [dashboard_path, course_path(@course), class_session_home_path(@course, @class_session)]
 				} 
 %>
-
-
 
 <!-- Add Take Aways -->
 

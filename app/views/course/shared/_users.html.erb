@@ -1,8 +1,20 @@
 <!-- renders tables of users -->
+<h3>	
+	Currently Enrolled Students
+</h3>
+
+<div class="list-group">
 
 <% @users_to_render.each do |user| %>
-	<h4>
-		<%= link_to user.email, user_path(user) %>
-	</h4>	
+	
+	<%= link_to user_path(user), class: "list-group-item" do %>
+		<%= user.first_name + ' ' + user.last_name %>
+
+		<%= image_tag(user.profile_pic_url) %>
+
+	<% end %>
+		
 
 <% end %>
+
+</div>

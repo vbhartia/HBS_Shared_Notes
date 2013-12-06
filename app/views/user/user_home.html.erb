@@ -1,20 +1,7 @@
-
-<table>
-	<tr>
-		<td>
-<%= image_tag(@user_to_render.profile_pic_url, size: "64x64", alt: "Edit Entry") %>
-		</td>
-		<td>
-
-		<h2>
-			<%= @user_to_render.first_name %>
-			<%= @user_to_render.last_name %>'s courses
-		</h2>
-		</td>
-	<tr/>
-</table>
-
-<br/>
+<%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', image_tag(@user_to_render.profile_pic_url, size: "64x64", alt: "Edit Entry") + ' ' + @user_to_render.first_name + ' ' + @user_to_render.last_name + '\'s Courses'], 
+				:nav_urls => nav_urls_array = ['abc', 'acb']
+				} 
+%>
 
 <% @courses_to_render = @user_to_render.courses.all %>
 
