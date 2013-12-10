@@ -2,8 +2,24 @@
 
 Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"><%= take_away.votes.count %></a>
 
+
+<a href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Tooltip on bottom</a>
+
 <% if voted?(take_away.votes, current_user) %>
 	You Already Voted
+
+	<%= form_tag(delete_vote_path, method: "post", :take_away_id => take_away.id) do %>
+		
+		<input name="take_away_id" type="hidden" value="<%= take_away.id %>" />
+
+	  	<button type="submit" class=" btn-link" title="Vote Up">
+	  		<i class="icon-thumbs-down"></i>
+	  		Remove Vote
+
+	  	</button>
+
+	<% end %>
+
 
 <% else %>
 
@@ -11,14 +27,15 @@ Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"
 		
 		<input name="take_away_id" type="hidden" value="<%= take_away.id %>" />
 
-	  	<button type="submit" class=" btn-success" title="Vote Up">Vote Up
+	  	<button type="submit" class=" btn-link" title="Vote Up">
+	  		<i class="icon-thumbs-up"></i>
+	  		Up Vote 
+
 	  	</button>
 
 	<% end %>
 
 <% end %>
-
-
 
 
 

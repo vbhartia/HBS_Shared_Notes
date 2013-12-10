@@ -86,8 +86,6 @@ class CourseController < ApplicationController
 
   #******** Votes
   def add_vote
-    puts params[:take_away_id]
-    puts '***********************************'
 
     vote = Vote.new
     vote.user = current_user
@@ -97,6 +95,21 @@ class CourseController < ApplicationController
     redirect_to class_session_home_path(vote.take_away.class_session.course, vote.take_away.class_session)
 
   end
+
+  def delete_vote
+    take_away = TakeAway.find(params[:take_away_id])
+
+    vote = take_away.votes.where(user_id = current_user.id)
+
+    puts '***********************************'
+    puts vote.first.user.first_name
+
+    vote.first.delete
+
+    redirect_to class_session_home_path(vote.first.take_away.class_session.course, vote.first.take_away.class_session)
+
+  end
+
 
 
 

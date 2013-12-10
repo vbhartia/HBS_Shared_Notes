@@ -1,5 +1,5 @@
 <%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', image_tag(@user_to_render.profile_pic_url, size: "64x64", alt: "Edit Entry") + ' ' + @user_to_render.first_name + ' ' + @user_to_render.last_name + '\'s Courses'], 
-				:nav_urls => nav_urls_array = ['abc', 'acb']
+				:nav_urls => nav_urls_array = [dashboard_path, user_path(@user_to_render)]
 				} 
 %>
 
