@@ -97,22 +97,24 @@ class CourseController < ApplicationController
   end
 
   def delete_vote
-    take_away = TakeAway.find(params[:take_away_id])
+    take_away = TakeAway.find(params[:take_away_id])  
 
     puts '****** after take_away'
     puts take_away
 
-    votes = take_away.votes.where(user_id = current_user.id)
+    votes = take_away.votes
 
     puts '****** after votes'
     puts votes
 
-    vote = votes.first
+    vote = votes.where(user_id = current_user.id)
 
-    vote.delete
+    puts vote.first.user.first_name
+
+    vote.first.destroy
 
     puts '****** after delete'
-    puts vote
+    puts votes
 
     redirect_to class_session_home_path(take_away.class_session.course, take_away.class_session)
 
