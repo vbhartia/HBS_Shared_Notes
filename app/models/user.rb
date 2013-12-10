@@ -41,4 +41,8 @@ class User < ActiveRecord::Base
     self.profile_pic_url = omniauth['info']['image']
 
   end
+
+  def full_name
+    self.first_name + ' ' + self.last_name
+  end
 end

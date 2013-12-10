@@ -39,4 +39,20 @@ module ApplicationHelper
 
      ret
   end
+
+  def voted?(votes, user_to_check)
+  
+    user_voted = false 
+
+    votes.each do |vote|  
+      if vote.user == user_to_check
+        user_voted = true
+      end
+    end
+
+    user_voted
+    
+  end
+
+
 end

@@ -29,7 +29,7 @@ class CourseController < ApplicationController
   	redirect_to dashboard_path
   end
 
-  #** Add Class Sessions
+  #******** Class Sessions
 
   def add_class_session
 
@@ -53,6 +53,8 @@ class CourseController < ApplicationController
 
   	@class_session = ClassSession.find(params[:class_session_id])
   end
+
+  #******** Take Aways
 
   def add_take_away
   	
@@ -81,5 +83,21 @@ class CourseController < ApplicationController
   	redirect_to class_session_home_path(course_id, class_session_id)
 	
   end
+
+  #******** Votes
+  def add_vote
+    puts params[:take_away_id]
+    puts '***********************************'
+
+    vote = Vote.new
+    vote.user = current_user
+    vote.take_away = TakeAway.find(params[:take_away_id])
+    vote.save!
+
+    redirect_to class_session_home_path(vote.take_away.class_session.course, vote.take_away.class_session)
+
+  end
+
+
 
 end

@@ -37,4 +37,8 @@ SharedNotes::Application.routes.draw do
 
   post 'users/update_profile_pic' => "user#update_profile_pic", as: 'update_profile_pic'
 
+  #********** Votes ************#
+  post 'votes' => "course#add_vote", as: 'add_vote'
+
+
 end
