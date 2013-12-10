@@ -101,9 +101,11 @@ class CourseController < ApplicationController
 
     votes = take_away.votes.where(user_id = current_user.id)
 
-    vote = votes.first.delete
+    vote = votes.first
 
-    redirect_to class_session_home_path(vote.take_away.class_session.course, vote.take_away.class_session)
+    vote.delete
+
+    redirect_to class_session_home_path(take_away.class_session.course, take_away.class_session)
 
   end
 
