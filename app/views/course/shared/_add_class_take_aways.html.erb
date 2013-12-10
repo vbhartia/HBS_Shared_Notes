@@ -6,7 +6,7 @@
 <div class="accordion" id="accordion2">
   <div class="accordion-group">
     <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= parent_id %>">
         
         <button class="btn btn-success">
         	+ Add Your Own Take Away
@@ -15,16 +15,18 @@
       </a>
     </div>
 
-    <div id="collapseOne" class="accordion-body collapse">
+    <div id="collapse<%= parent_id %>" class="accordion-body collapse">
       <div class="accordion-inner">
 
 	 
 
-<%= form_tag(add_take_away_path, method: "post", :id => "form_id") do %>
+<%= form_tag(add_take_away_path, method: "post", :id => ("form_" + parent_id.to_s)) do %>
 
 	<input name="course_to_add_id" type="hidden" value="<%= @course.id %>" />
 
 	<input name="class_session_to_add_id" type="hidden" value="<%= @class_session.id %>" />
+
+  <input name="parent_id" type="hidden" value="<%= parent_id %>" />
 
 	Take away Title
 
@@ -32,7 +34,7 @@
 
 	<br/>
 
-	<textarea rows="6" style="width: 100%" name="content" form="form_id">
+	<textarea rows="6" style="width: 100%" name="content" form="form_<%= parent_id %>">
 	</textarea>
 
 

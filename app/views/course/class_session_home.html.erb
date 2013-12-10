@@ -7,11 +7,16 @@
 
 <!-- Add Take Aways -->
 
-<%= render "course/shared/add_class_take_aways"%>
+ <%= render "course/shared/add_class_take_aways", :parent_id => ''%> 
 
 <!-- List of Take Aways -->
 
-<%= render "course/shared/class_take_aways"%>
+
+
+
+<%= nested_take_aways(@class_session.take_aways.roots) %>
+
+
 
 
 

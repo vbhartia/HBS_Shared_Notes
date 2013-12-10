@@ -1,0 +1,19 @@
+<% unless take_away.nil? %>
+
+	<div class='key_take_away well'>
+
+		<h2>
+			<%= take_away.title %>
+		</h2>
+
+			<%= take_away.content.html_safe %>
+
+		<br/>	
+			<%= take_away.user.email %>
+
+		<hr/>
+			<%= render "course/shared/add_class_take_aways", :parent_id => take_away.id %>
+		<hr/>
+	</div>
+
+<% end %>

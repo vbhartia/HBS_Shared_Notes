@@ -65,6 +65,7 @@ class CourseController < ApplicationController
 
   	take_away_to_add.class_session_id = class_session_id
   	take_away_to_add.user_id = current_user.id
+    take_away_to_add.parent_id = params[:parent_id]
 
   	take_away_to_add.save
 

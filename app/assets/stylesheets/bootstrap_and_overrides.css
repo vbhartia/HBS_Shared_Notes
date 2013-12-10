@@ -6,6 +6,10 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+.nested_take_aways {
+  margin-left: 30px;
+}
+
 .crop_baker 
 {
     width: 1500px;
