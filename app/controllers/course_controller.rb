@@ -99,9 +99,9 @@ class CourseController < ApplicationController
   def delete_vote
     take_away = TakeAway.find(params[:take_away_id])
 
-    vote = take_away.votes.where(user_id = current_user.id)
+    votes = take_away.votes.where(user_id = current_user.id)
 
-    vote.delete
+    vote = votes.first.delete
 
     redirect_to class_session_home_path(vote.take_away.class_session.course, vote.take_away.class_session)
 
