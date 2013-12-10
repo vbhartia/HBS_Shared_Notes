@@ -2,9 +2,6 @@
 
 Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"><%= take_away.votes.count %></a>
 
-
-<a href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Tooltip on bottom</a>
-
 <% if voted?(take_away.votes, current_user) %>
 	You Already Voted
 
