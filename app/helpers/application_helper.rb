@@ -51,8 +51,16 @@ module ApplicationHelper
     end
 
     user_voted
-    
   end
 
+  def voted_users(votes)
+    users =   Array.new
+
+    votes.each do |vote|
+      users.push(vote.user)
+    end
+
+    users
+  end
 
 end

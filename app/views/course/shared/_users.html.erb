@@ -1,20 +1,21 @@
 <!-- renders tables of users -->
-<h3>	
-	Currently Enrolled Students
-</h3>
 
-<div class="list-group">
 
-<% @users_to_render.each do |user| %>
-	
-	<%= link_to user_path(user), class: "list-group-item" do %>
-		<%= user.first_name + ' ' + user.last_name %>
+<table class="table">
+	<% @users_to_render.each do |user| %>
+		<tr>
+			<td>
+		<%= link_to user_path(user) do %>
+			<%= image_tag(user.profile_pic_url, height: '60', width: '60', class: "img-rounded") %>
 
-		<%= image_tag(user.profile_pic_url) %>
+			<%= user.first_name + ' ' + user.last_name %>
 
+
+			</td>
+		</tr>
+
+		<% end %>
+			
 	<% end %>
-		
 
-<% end %>
-
-</div>
+</table>
