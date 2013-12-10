@@ -21,6 +21,7 @@ gem 'omniauth-twitter'
 	
 #gem "less-rails"	
 gem 'twitter-bootstrap-rails'
+gem 'ancestry'
 
 
 # Gems used only for assets and not required

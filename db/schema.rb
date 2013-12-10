@@ -56,11 +56,14 @@ ActiveRecord::Schema.define(:version => 20131128082445) do
   create_table "take_aways", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.string   "ancestry"
     t.integer  "user_id"
     t.integer  "class_session_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  add_index "take_aways", ["ancestry"], :name => "index_take_aways_on_ancestry"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
