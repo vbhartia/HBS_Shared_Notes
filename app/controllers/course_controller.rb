@@ -109,9 +109,9 @@ class CourseController < ApplicationController
 
     vote = votes.where(user_id = current_user.id)
 
-    puts vote.user.first_name
+    puts vote.first.user.first_name
 
-    vote.destroy
+    vote.first.destroy
 
     puts '****** after delete'
     puts votes
