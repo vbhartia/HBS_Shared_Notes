@@ -1,28 +1,29 @@
 <% unless take_away.nil? %>
 
-	<div class='well' id='<%= take_away.id %>'>
+	<div class='take_away_outer' id='<%= take_away.id %>'>		
+		
+		<!-- Render the header -->
+		<div class='take_away_header'>
+			<h6 class='display_inline'>
+				<%= profile_pic_name(take_away.user) %>
+			</h6>
+		
+			<p class="muted pull-right"> 	
+				<small><%= time_ago_in_words(take_away.created_at) %> ago
+				</small>
+			</p>
+		</div>
 
-		<h4>
-			<%= take_away.user.email %>
-		</h4>
-			<hr/>
-
+		<div class='take_away_content'>
 			<%= take_away.content.html_safe %>
+		</div>
 
-			<hr/>
-
-		<br/>
-			<!-- Votes -->
-
+		<div class='take_away_footer'>
 			<%= render "course/shared/votes_take_aways", :take_away => take_away %>
-
 			
-
-			<!-- Votes -->
-
-		<hr/>
 			<%= render "course/shared/add_class_take_aways", :parent_id => take_away.id %>
-		<hr/>
+
+		</div>
 
 	</div>
 

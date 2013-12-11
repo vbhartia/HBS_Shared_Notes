@@ -1,8 +1,6 @@
-
-
-<%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes'], 
-				:nav_urls => nav_urls_array = [dashboard_path]
-				} 
+<%= nav_bar_render(['My Classes'],
+					[dashboard_path]
+					)
 %>
 
 <h5>

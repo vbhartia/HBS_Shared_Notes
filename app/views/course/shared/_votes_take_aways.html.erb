@@ -5,22 +5,23 @@ Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"
 <% if voted?(take_away.votes, current_user) %>
 	You Already Voted
 
-	<%= form_tag(delete_vote_path, method: "post", :take_away_id => take_away.id) do %>
+	<%= form_tag(delete_vote_path, :class => 'display_inline', method: "post", :take_away_id => take_away.id) do %>
 		
 		<input name="take_away_id" type="hidden" value="<%= take_away.id %>" />
 
-	  	<button type="submit" class=" btn-link" title="Vote Up">
+	  	<button type="submit" class="btn-link" title="Vote Up">
 	  		<i class="icon-thumbs-down"></i>
 	  		Remove Vote
 
 	  	</button>
+
 
 	<% end %>
 
 
 <% else %>
 
-	<%= form_tag(add_vote_path, method: "post", :take_away_id => take_away.id) do %>
+	<%= form_tag(add_vote_path, :class => 'display_inline', method: "post", :take_away_id => take_away.id) do %>
 		
 		<input name="take_away_id" type="hidden" value="<%= take_away.id %>" />
 
@@ -35,7 +36,6 @@ Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"
 <% end %>
 
 
-
 <!-- Modal -->
 <div id="UserModal<%= take_away.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
@@ -44,8 +44,24 @@ Votes: <a href="#UserModal<%= take_away.id %>" role="button" data-toggle="modal"
   </div>
   <div class="modal-body">
 
-	<% @users_to_render = voted_users(take_away.votes) %>
-	<%= render "course/shared/users"%>
+	<table class="table">
+	<% take_away.votes.each do |vote| %>
+		<tr>
+			<td>
+				<%= profile_pic_name(vote.user) %>
+
+			</td>
+
+			<td>
+				<%= time_ago_in_words(vote.created_at) %> ago
+			</td>
+		</tr>
+
+		
+			
+	<% end %>
+
+</table>
 
 
 	</table>

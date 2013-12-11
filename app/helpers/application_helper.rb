@@ -13,9 +13,7 @@ module ApplicationHelper
   end
 
   def to_day_of_week_and_date(input_date)
-
-	input_date.to_date.strftime("%A, %B #{input_date.day.ordinalize}, %Y") 
-	
+	 input_date.to_date.strftime("%A, %B #{input_date.day.ordinalize}, %Y") 
   end
 
   def to_slug(ret)
@@ -61,6 +59,17 @@ module ApplicationHelper
     end
 
     users
+  end
+
+
+  # Renders the Nav Bar and Approperiate paramaters
+  def nav_bar_render(title, urls)
+
+    render :partial => "course/shared/title_nav_header", 
+            :locals => {:nav_title => title, 
+                        :nav_urls => urls
+                        } 
+
   end
 
 end

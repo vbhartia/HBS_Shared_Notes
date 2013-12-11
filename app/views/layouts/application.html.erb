@@ -40,20 +40,24 @@
 
               <%= link_to "My Classes", dashboard_path  %>
 
-
-
               <ul class="nav nav-pills pull-right">
-                
-                <div class="nav">
-                  <%=image_tag(current_user.profile_pic_url, height: '48', width: '48', class: "img-rounded") %>
-                </div>
 
                 <li class="dropdown">
 
-                  <a class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" href="#">
-                      <%= current_user.first_name + " " + current_user.last_name %> 
-                      <b class="caret"></b>
+                  <a class="dropdown-toggle " id="drop4" role="button" data-toggle="dropdown" href="#">
+                
+                      <%= image_tag(current_user.profile_pic_url, height: '40', width: '40', class: "img-rounded") + 
+
+                        '&nbsp &nbsp'.html_safe +
+
+                        current_user.first_name + ' ' + current_user.last_name %>
+                
+
+                      <i class="caret"></i>
+
                   </a>
+
+
 
                   <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
                     
@@ -111,7 +115,7 @@
     
     <% else %>
 
-      <div class="container">
+      <div class="container margin-top-15">
           <div class="row">
             <div class="span12">
               <%= bootstrap_flash %>

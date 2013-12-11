@@ -1,14 +1,11 @@
-<%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', @current_course.title], 
-				:nav_urls => nav_urls_array = [dashboard_path, course_path(@current_course)]
-				} 
-%>
+<%= nav_bar_render(['My Classes', 
+					@current_course.title], 
+				   [dashboard_path, 
+				   	course_path(@current_course)]
+				   )  %>
 
 <!-- Show class sessions -->
 
-<!-- add class sessions -->
-
-
-<%= render "course/shared/add_class_session"%>
 
 
 <% @class_sessions_to_render = @current_course.class_sessions.all %>
@@ -16,11 +13,32 @@
 <%= render "course/shared/class_sessions"%>
 
 
-<hr/>	
-<!-- Show Currently enrolled Students -->
+<h4>
+	Currently Enrolled Students
+</h4>
 
+	<hr/>	
+	<!-- Show Currently enrolled Students -->
+		
 
-<% @users_to_render = @current_course.users %>
-<%= render "course/shared/users"%>
+	<table class="table">
+		<% @current_course.users.each do |user| %>
+			<tr>
+				<td>
 
+					<%= profile_pic_name(user) %>
+
+				</td>
+			</tr>	
+		<% end %>
+	</table>
+
+	<!-- add class sessions -->
+
+<h4>
+	Add a class session
+</h4>
+<hr/>
+
+	<%= render "course/shared/add_class_session"%>
 	

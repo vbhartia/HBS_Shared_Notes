@@ -1,8 +1,10 @@
-<%= render :partial => "course/shared/title_nav_header", :locals => {:nav_title => nav_array = ['My Classes', 
-				@course.title, to_day_of_week_and_date(@class_session.class_date) + ': ' +
-				@class_session.title], 
-				:nav_urls => nav_urls_array = [dashboard_path, course_path(@course), class_session_home_path(@course, @class_session)]
-				} 
+<%= nav_bar_render(['My Classes', 
+					@course.title, 
+					to_day_of_week_and_date(@class_session.class_date) + ': ' + @class_session.title],
+					[dashboard_path, 
+					course_path(@course), 
+					class_session_home_path(@course, @class_session)]
+					)
 %>
 
 <!-- Add Take Aways -->
@@ -11,10 +13,10 @@
 
 <!-- List of Take Aways -->
 
+<div class='span8'>
 <%= nested_take_aways(@class_session.take_aways.roots.sort! { |a,b| b.votes.count <=> a.votes.count }) %>
+</div>
 
-<script src='http://codeorigin.jquery.com/color/jquery.color-2.1.2.min.js'>
-</script>
 
 <script>
 
@@ -38,7 +40,7 @@
 
 		var take_away_coordinates = take_away.offset()
 
-		$(window).scrollTop(take_away_coordinates.top + 30)
+		$(window).scrollTop(take_away_coordinates.top - 50)
 
 		var original_color = take_away.css("background-color")
 
