@@ -11,12 +11,47 @@
 
 <!-- List of Take Aways -->
 
-
-
-
 <%= nested_take_aways(@class_session.take_aways.roots.sort! { |a,b| b.votes.count <=> a.votes.count }) %>
 
+<script src='http://codeorigin.jquery.com/color/jquery.color-2.1.2.min.js'>
+</script>
 
+<script>
+
+	function getJsonFromUrl() {
+	  var query = location.search.substr(1);
+	  var data = query.split("&");
+	  var result = {};
+	  for(var i=0; i<data.length; i++) {
+	    var item = data[i].split("=");
+	    result[item[0]] = item[1];
+	  }
+	  return result;
+	}
+
+
+	v = getJsonFromUrl(window.location)['take_away_id']
+
+	if (v)
+	{		
+		var take_away = $('#' + v)
+
+		var take_away_coordinates = take_away.offset()
+
+		$(window).scrollTop(take_away_coordinates.top + 30)
+
+		var original_color = take_away.css("background-color")
+
+		take_away.css("background-color", 'cyan')
+		
+
+		take_away.animate({
+	          backgroundColor: jQuery.Color( original_color ),
+	        }, 1000 )	
+
+	}
+
+</script>
 
 
 

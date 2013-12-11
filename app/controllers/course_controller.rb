@@ -92,7 +92,9 @@ class CourseController < ApplicationController
     vote.take_away = TakeAway.find(params[:take_away_id])
     vote.save!
 
-    redirect_to class_session_home_path(vote.take_away.class_session.course, vote.take_away.class_session)
+    redirect_to class_session_home_path(vote.take_away.class_session.course, 
+                                        vote.take_away.class_session, 
+                                        :take_away_id => params[:take_away_id])
 
   end
 
