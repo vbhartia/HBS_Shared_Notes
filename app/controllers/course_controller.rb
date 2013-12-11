@@ -80,7 +80,8 @@ class CourseController < ApplicationController
       end
     end
 
-  	redirect_to class_session_home_path(course_id, class_session_id)
+  	redirect_to class_session_home_path(course_id, class_session_id,
+                                        :take_away_id => take_away_to_add.id)
 	
   end
 
