@@ -1,8 +1,19 @@
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-						
 
-<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= parent_id %>">
+<% if take_away.nil? %>
+  <% @parent_id = '' %>
+  <% @class_session = class_session %>
+
+<% else %>
+  <% @parent_id = take_away.id.to_s %>
+  <% @class_session = take_away.class_session %>
+<% end %>
+
+
+
+						
+<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<%= @parent_id %>">
         
   <button class="btn-small btn-success">
     + Add Your Own Take Away
@@ -10,16 +21,16 @@
    
 </a>
 
-<div id="collapse<%= parent_id %>" class="accordion-body collapse">
+<div id="collapse<%= @parent_id %>" class="accordion-body collapse">
   <div class="accordion-inner">
 
-	 <%= form_tag(add_take_away_path, method: "post", :id => ("form_" + parent_id.to_s)) do %>
+	 <%= form_tag(add_take_away_path, method: "post", :id => ("form_" + @parent_id)) do %>
 
-	 <input name="course_to_add_id" type="hidden" value="<%= @course.id %>" />
+	 <input name="course_to_add_id" type="hidden" value="<%= @class_session.course.id %>" />
 
 	 <input name="class_session_to_add_id" type="hidden" value="<%= @class_session.id %>" />
 
-    <input name="parent_id" type="hidden" value="<%= parent_id %>" />
+    <input name="parent_id" type="hidden" value="<%= @parent_id %>" />
 
 	   Take away Title
 
@@ -27,7 +38,7 @@
 
 	   <br/>
 
-	   <textarea rows="6" style="width: 100%" name="content" form="form_<%= parent_id %>">
+	   <textarea rows="6" style="width: 100%" name="content" form="form_<%= @parent_id %>">
 	   </textarea>
   	<br/>
 

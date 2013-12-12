@@ -1,9 +1,7 @@
-
-
 <% @courses_to_render.each do |course| %>
 
-	<div class = "panel panel-default light_blue_background padding-10px panel_border">
-		<div class="panel-heading">
+<div class = "outer_container margin-top-15">
+	<div class='container_header'>
 		<table>
 			<tr>
 				<td colspan = "3">
@@ -25,19 +23,15 @@
 				</td>
 			</tr>
 		</table>
-		</div>	
+	</div>	
 
+	<div class='container_content container_footer_border'>
 
 		<!-- Render class session -->	
 		<% unless course.class_sessions.count == 0 %>
-			<div class="panel-body">
-			<div class ='class_session_in_course_view' >
-
-				<% @class_session_to_render = course.class_sessions.first %>
+			Most Recent Class Session: <% @class_session_to_render = course.class_sessions.first %>
 
 				<%= link_to to_day_of_week_and_date(@class_session_to_render.class_date), class_session_home_path(course.id, @class_session_to_render.id) %>
-				<br/>
-
 
 				<h4>
 				<%= link_to @class_session_to_render.title, class_session_home_path(course.id, @class_session_to_render.id) %>	
@@ -47,44 +41,16 @@
 
 				<% unless @class_session_to_render.take_aways.count == 0 %>
 					<% @take_away_to_render = @class_session_to_render.take_aways.first %>
+ 
+					<% puts @take_away_to_render.id %>
+					<% puts '**************' %>
 
-					<div class = 'key_take_away' >
-						<div class='pull-right'>
+	  				<%= render "course/shared/take_away", :take_away => @take_away_to_render %>
 
-							<%= link_to(user_path(@take_away_to_render.user.id)) do %>
-
-								<%= image_tag(@take_away_to_render.user.profile_pic_url, height: '48', width: '48', class: "img-rounded") %>
-
-								<%= @take_away_to_render.user.first_name %>
-
-								<%= @take_away_to_render.user.last_name %>
-
-							 <% end %>
-
-						</div>
-
-
-						<h5>
-							<%= @take_away_to_render.title %>
-						</h5>
-						<span>
-							<%= time_tag(@take_away_to_render.created_at, :format=>'%B %d, %Y %l:%M %p') %>
-						</span>
-
-						<hr/>
-						
-
-						<div class='take_away_list'>
-							<%= @take_away_to_render.content.html_safe %>
-						</div>
-					</div>
-
-
-		
 				<% end %>
-			</div>
-			</div>
+	
 		<% end %>
 	</div>
+</div>
 
 <% end %>
