@@ -7,38 +7,69 @@
 <!-- Show class sessions -->
 
 
+<div class="span5 outer_container">
+	<div class='container_header'>
+		<h3>
+			Class Sessions
+		</h3>
+	</div>
 
-<% @class_sessions_to_render = @current_course.class_sessions.all %>
+	<div class='container_content container_footer_border'>
 
-<%= render "course/shared/class_sessions"%>
+		<% @class_sessions_to_render = @current_course.class_sessions.all %>
+
+		<%= render "course/shared/class_sessions"%>
 
 
-<h4>
-	Currently Enrolled Students
-</h4>
+		<!-- add class sessions -->
 
-	<hr/>	
+		<%= render "course/shared/add_class_session"%>
+	</div>
+</div>
+
+<div class="offset1 span5">
+
+	<!-- Show Course Info -->
+	<div class="outer_container span5">
+		<div class='container_header'>
+			<h3>
+				<%= @current_course.title %>
+			</h3>
+		</div>
+
+		<div class='container_content container_footer_border'>
+			Section: <%= @current_course.section %>
+			<br/>
+			Professor: <%= @current_course.faculty %>
+			<br/>
+			Day, Time: <%= @current_course.day + ' ' + @current_course.time%>
+
+			
+		</div>
+	</div>
+
 	<!-- Show Currently enrolled Students -->
-		
+	<div class="outer_container span5 margin-top-15">
+		<div class='container_header'>
+			<h3>
+				Currently Enrolled Students
+			</h3>
+		</div>
 
-	<table class="table">
-		<% @current_course.users.each do |user| %>
-			<tr>
-				<td>
+		<div class='container_content container_footer_border'>
+			<table class="table">
+				<% @current_course.users.each do |user| %>
+					<tr>
+						<td>
 
-					<%= profile_pic_name(user) %>
+							<%= profile_pic_name(user) %>
 
-				</td>
-			</tr>	
-		<% end %>
-	</table>
+						</td>
+					</tr>	
+				<% end %>
+			</table>
+		</div >
+	</div>
+</div>
 
-	<!-- add class sessions -->
-
-<h4>
-	Add a class session
-</h4>
-<hr/>
-
-	<%= render "course/shared/add_class_session"%>
 	
