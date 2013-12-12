@@ -26,10 +26,11 @@
 	</div>	
 
 	<div class='container_content container_footer_border'>
+		<div class=''>
 
 		<!-- Render class session -->	
-		<% unless course.class_sessions.count == 0 %>
-			Most Recent Class Session: <% @class_session_to_render = course.class_sessions.first %>
+			<% unless course.class_sessions.count == 0 %>
+				Most Recent Class Session: <% @class_session_to_render = course.class_sessions.first %>
 
 				<%= link_to to_day_of_week_and_date(@class_session_to_render.class_date), class_session_home_path(course.id, @class_session_to_render.id) %>
 
@@ -41,15 +42,15 @@
 
 				<% unless @class_session_to_render.take_aways.count == 0 %>
 					<% @take_away_to_render = @class_session_to_render.take_aways.first %>
- 
+
 					<% puts @take_away_to_render.id %>
 					<% puts '**************' %>
 
 	  				<%= render "course/shared/take_away", :take_away => @take_away_to_render %>
 
 				<% end %>
-	
-		<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>
 
