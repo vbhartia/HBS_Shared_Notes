@@ -5,12 +5,11 @@ class CreateCourses < ActiveRecord::Migration
 		t.string :title
 		t.string :faculty
 		t.string :term
-		t.string :quarter_credits
-		t.string :code
+		t.string :quarter
 		t.string :section
-		t.string :day
-		t.string :time
-		t.string :location
+		t.time :start_time
+		t.time :end_time
+		t.string :x_y_time
 
 		t.timestamps
 

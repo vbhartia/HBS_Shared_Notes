@@ -41,7 +41,7 @@
 			<br/>
 			Professor: <%= @current_course.faculty %>
 			<br/>
-			Day, Time: <%= @current_course.day + ' ' + @current_course.time%>
+			X/Y, Start Time/End Time: <%= @current_course.x_y_time + ', ' + @current_course.start_time.strftime("%H:%M") %>
 
 			
 		</div>

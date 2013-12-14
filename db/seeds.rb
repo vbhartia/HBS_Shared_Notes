@@ -7,8 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+
 courses = Array.new
 
+
+
+=begin
 courses[0] = {"title" => "Authentic Leadership Development", "faculty" => "Perlow", "code" => "2090", "section" => "1", "day" => "TU", "time" => "11:40 AM", "location" => "ALD 209", "quarter_credits" => "Q1Q2,3", "term" => "Fall 2013", }
 courses[1] = {"title" => "Authentic Leadership Development", "faculty" => "Perlow", "code" => "2090", "section" => "2", "day" => "TU", "time" => "01:15 PM", "location" => "ALD 209", "quarter_credits" => "Q1Q2,3", "term" => "Fall 2013", }
 courses[2] = {"title" => "Authentic Leadership Development", "faculty" => "Gabarro", "code" => "2090", "section" => "3", "day" => "TH", "time" => "11:40 AM", "location" => "ALD 211", "quarter_credits" => "Q1Q2,3", "term" => "Fall 2013", }
@@ -178,19 +183,170 @@ courses[165] = {"title" => "Understanding and Influencing Operations as an Inves
 courses[166] = {"title" => "Venture Capital and Private Equity", "faculty" => "Rhodes-Kropf", "code" => "1428", "section" => "1", "day" => "Y", "time" => "10:05 AM", "location" => "", "quarter_credits" => "Q3Q4,3", "term" => "Winter 2014", }
 courses[167] = {"title" => "Venture Capital and Private Equity", "faculty" => "Rhodes-Kropf", "code" => "1428", "section" => "2", "day" => "Y", "time" => "11:40 AM", "location" => "", "quarter_credits" => "Q3Q4,3", "term" => "Winter 2014", }
 courses[168] = {"title" => "Venture Capital in Historical Perspective", "faculty" => "Hardymon;  Nicholas", "code" => "1125", "section" => "0", "day" => "Y", "time" => "11:40 AM", "location" => "", "quarter_credits" => "Q4,1.5", "term" => "Winter 2014", }
+=end
+
+courses[0] = {"title" => "Agribusiness", "faculty" => "David E. Bell", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[1] = {"title" => "Authentic Leadership Development", "faculty" => "Thomas DeLong", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x*",}
+courses[2] = {"title" => "Authentic Leadership Development", "faculty" => "Thomas DeLong", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x*",}
+courses[3] = {"title" => "Behavioral and Value Investing", "faculty" => "Robin Greenwood, Malcolm P. Baker", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[4] = {"title" => "Branding + Different", "faculty" => "Jill Avery,Youngme Moon", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[5] = {"title" => "Building and Sustaining a Successful Enterprise", "faculty" => "Willy C. Shih", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "08:30", "end_time" => "09:50", "x_y_time" => "x",}
+courses[6] = {"title" => "Building and Sustaining a Successful Enterprise", "faculty" => "Chet Huber", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "2", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[7] = {"title" => "Building and Sustaining a Successful Enterprise", "faculty" => "Derek van Bever", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "3", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[8] = {"title" => "Business at the Base of the Pyramid ", "faculty" => "Michael Chu", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[9] = {"title" => "Collaborating in a Global Economy", "faculty" => "Tsedal Neeley", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[10] = {"title" => "Competing with Social Networks", "faculty" => "Mikolaj Piskorski", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "08:30", "end_time" => "09:50", "x_y_time" => "x",}
+courses[11] = {"title" => "Competing with Social Networks", "faculty" => "Mikolaj Piskorski", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[12] = {"title" => "Corporate Strategy", "faculty" => "David J. Collis", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[13] = {"title" => "Creating the Modern Financial System", "faculty" => "David Moss", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[14] = {"title" => "Creating Value Through Corporate Restructuring", "faculty" => "Stuart Gilson, Kristin Williams Mugford", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[15] = {"title" => "Creative High-Impact Ventures: Entrepreneurs Who Changed The World", "faculty" => "Mukti Khaire", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[16] = {"title" => "Deals", "faculty" => "Kevin Mohan", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[17] = {"title" => "Designing Competitive Organizations", "faculty" => "Robert Simons, Anette Mikes", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[18] = {"title" => "Digital Innovation and Transformation", "faculty" => "Karim R. Lakhani", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "08:30", "end_time" => "09:50", "x_y_time" => "x",}
+courses[19] = {"title" => "Digital Innovation and Transformation", "faculty" => "Marco Iansiti", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[20] = {"title" => "Digital Marketing Strategy", "faculty" => "Thales S. Teixeira", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[21] = {"title" => "Doing Business in China", "faculty" => "William Kirby", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[22] = {"title" => "Enterprise Risk Management:  Strategy and Leadership in the face of Large-Scale Uncertainties", "faculty" => "Herman B. Leonard", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[23] = {"title" => "Entrepreneurial Solutions for Market Failure", "faculty" => "Joseph L. Bower", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[24] = {"title" => "Entrepreneurship in Education Reform", "faculty" => "John Jong-Hyun Kim", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[25] = {"title" => "Field Course: Entrepreneurial Solutions for Market Failure", "faculty" => "Joseph L. Bower", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[26] = {"title" => "Field Course: Entrepreneurship through Acquisition", "faculty" => "Richard S. Ruback, Royce Yudkoff", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[27] = {"title" => "Field Course: Housing in the United States", "faculty" => "Nicolas Retsinas", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[28] = {"title" => "Field Course: Impact Investing and Social Commercial Models(also listed under Finance and General Management)", "faculty" => "Michael Chu,Shawn Cole", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[29] = {"title" => "Field Course: Launching Technology Ventures", "faculty" => "Thomas R. Eisenmann", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[30] = {"title" => "Field Course: Planning Your Business in China", "faculty" => "William C. Kirby", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[31] = {"title" => "Field Course: Product Management 102", "faculty" => "Thomas R. Eisenmann", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[32] = {"title" => "Field Course: Stock Pitching", "faculty" => "Lauren Cohen", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[33] = {"title" => "General Management: Processes and Action", "faculty" => "David Garvin", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[34] = {"title" => "Global Strategic Management", "faculty" => "Jordan Siegel", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[35] = {"title" => "Great Negotiators", "faculty" => "James K. Sebenius", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[36] = {"title" => "How Star Women Succeed: Leading Effective Careers and Organizations", "faculty" => "Boris Groysberg", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[37] = {"title" => "Institutions, Macroeconomics, and the Global Economy", "faculty" => "Rafael M. Di Tella,Lakshmi Iyer", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "08:30", "end_time" => "09:50", "x_y_time" => "x",}
+courses[38] = {"title" => "Institutions, Macroeconomics, and the Global Economy", "faculty" => "Rafael M. Di Tella,Lakshmi Iyer", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[39] = {"title" => "Introduction to Tax Decisions by Individuals and Companies", "faculty" => "Robert C. Pozen", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "08:30", "end_time" => "09:50", "x_y_time" => "x",}
+courses[40] = {"title" => "Knowledge-Based Strategy", "faculty" => "Hirotaka Takeuchi", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[41] = {"title" => "Launching Global Ventures", "faculty" => "William R. Kerr", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[42] = {"title" => "Launching Technology Ventures", "faculty" => "Thomas R. Eisenmann", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[43] = {"title" => "Launching Technology Ventures", "faculty" => "Jeffrey Bussgang", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "1", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[44] = {"title" => "Leading Professional Service Firms", "faculty" => "Heidi K. Gardner,Robert G. Eccles", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[45] = {"title" => "Managing Global Health: Applying Behavioral Economics to Create Impact", "faculty" => "Nava Ashraf", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[46] = {"title" => "Managing Service Operations", "faculty" => "Anita L. Tucker", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[47] = {"title" => "Managing Social Enterprise", "faculty" => "Alnoor Ebrahim", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[48] = {"title" => "Managing the Financial Firm", "faculty" => "David S. Scharfstein", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[49] = {"title" => "Managing, Organizing & Motivating for Value", "faculty" => "Brian Hall, Andrew Wasynczuk", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[50] = {"title" => "Negotiation", "faculty" => "Alison Wood Brooks, John Beshears", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[51] = {"title" => "Negotiation Intensive Course", "faculty" => "James K. Sebenius", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[52] = {"title" => "Power and Glory in Turbulent Times: The History of Leadership from Henry V to Steve Jobs", "faculty" => "Nancy F. Koehn", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[53] = {"title" => "Power and Glory in Turbulent Times: The History of Leadership from Henry V to Steve Jobs", "faculty" => "Nancy F. Koehn", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[54] = {"title" => "Real Asset Finance", "faculty" => "Andre F. Perold", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[55] = {"title" => "Real Estate in Frontier Markets", "faculty" => "Nicolas Retsinas", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "0", "start_time" => "11:40", "end_time" => "13:00", "x_y_time" => "x",}
+courses[56] = {"title" => "Real Estate Private Equity", "faculty" => "Nori Gerardo Lietz", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[57] = {"title" => "Reimagining Capitalism", "faculty" => "Rebecca M. Henderson, Clayton S. Rose", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "2", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[58] = {"title" => "Reimagining Capitalism", "faculty" => "Rebecca M. Henderson,", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "1", "start_time" => "10:05", "end_time" => "11:25", "x_y_time" => "x",}
+courses[59] = {"title" => "Reimagining Capitalism", "faculty" => "Rebecca M. Henderson,", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "3", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[60] = {"title" => "Retailing", "faculty" => "Jose Alvarez", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[61] = {"title" => "Role of Government in Market Economies", "faculty" => "Matthew C. Weinzierl", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[62] = {"title" => "Sustainable Cities: Finance, Design, and Innovation", "faculty" => "John D. Macomber", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[63] = {"title" => "The Board of Directors and Corporate Governance (also listed under Organizational Behavior)", "faculty" => "Jay Lorsch, John C. Coates", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "0", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[64] = {"title" => "The Coming of Managerial Capitalism: The United States", "faculty" => "Tom Nicholas", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[65] = {"title" => "Understanding and Influencing Operations as an Investor", "faculty" => "Ananth Raman", "term" => "Winter 2014", "quarter" => "Q3", "credits" => "1.5", "section" => "0", "start_time" => "13:15", "end_time" => "15:15", "x_y_time" => "x",}
+courses[66] = {"title" => "Venture Capital and Private Equity (also listed under Entrepreneurial Management)", "faculty" => "Matthew Rhodes-Kropf", "term" => "Winter 2014", "quarter" => "Q3Q4", "credits" => "3", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+courses[67] = {"title" => "Venture Capital in Historical Perspective", "faculty" => "Tom Nicholas ,G. Felda Hardymon", "term" => "Winter 2014", "quarter" => "Q4", "credits" => "1.5", "section" => "", "start_time" => "00:00", "end_time" => "00:00", "x_y_time" => "",}
+
+
+x_schedule = Array.new
+
+x_schedule[0]= "01-27-2014"
+x_schedule[1]= "01-29-2014"
+x_schedule[2]= "02-03-2014"
+x_schedule[3]= "02-04-2014"
+x_schedule[4]= "02-10-2014"
+x_schedule[5]= "02-11-2014"
+x_schedule[6]= "02-18-2014"
+x_schedule[7]= "02-19-2014"
+x_schedule[8]= "02-24-2014"
+x_schedule[9]= "02-25-2014"
+x_schedule[10]= "03-04-2014"
+x_schedule[11]= "03-05-2014"
+x_schedule[12]= "03-10-2014"
+x_schedule[13]= "03-11-2014"
+x_schedule[14]= "03-24-2014"
+x_schedule[15]= "03-25-2014"
+x_schedule[16]= "03-26-2014"
+x_schedule[17]= "03-31-2014"
+x_schedule[18]= "04-01-2014"
+x_schedule[19]= "04-07-2014"
+x_schedule[20]= "04-08-2014"
+x_schedule[21]= "04-14-2014"
+x_schedule[22]= "04-15-2014"
+x_schedule[23]= "04-16-2014"
+x_schedule[24]= "04-22-2014"
+x_schedule[25]= "04-23-2014"
+x_schedule[26]= "04-28-2014"
+x_schedule[27]= "04-29-2014"
+
+y_schedule = Array.new
+
+y_schedule[0]= "01-28-2014"
+y_schedule[1]= "01-30-2014"
+y_schedule[2]= "02-05-2014"
+y_schedule[3]= "02-06-2014"
+y_schedule[4]= "02-07-2014"
+y_schedule[5]= "02-12-2014"
+y_schedule[6]= "02-13-2014"
+y_schedule[7]= "02-14-2014"
+y_schedule[8]= "02-20-2014"
+y_schedule[9]= "02-21-2014"
+y_schedule[10]= "02-26-2014"
+y_schedule[11]= "02-27-2014"
+y_schedule[12]= "03-06-2014"
+y_schedule[13]= "03-07-2014"
+y_schedule[14]= "03-12-2014"
+y_schedule[15]= "03-13-2014"
+y_schedule[16]= "03-14-2014"
+y_schedule[17]= "03-27-2014"
+y_schedule[18]= "03-28-2014"
+y_schedule[19]= "04-02-2014"
+y_schedule[20]= "04-03-2014"
+y_schedule[21]= "04-09-2014"
+y_schedule[22]= "04-10-2014"
+y_schedule[23]= "04-17-2014"
+y_schedule[24]= "04-18-2014"
+y_schedule[25]= "04-24-2014"
+y_schedule[26]= "04-30-2014"
+y_schedule[27]= "05-01-2014"
+=begin
+=end
+
+# Create Courses
 
 courses.each do |course|
   course_entry = Course.new()
   course_entry.title = course['title']
   course_entry.faculty = course['faculty']
-  course_entry.code = course['code']
   course_entry.section = course['section']
-  course_entry.day = course['day']
-  course_entry.time = course['time']
-  course_entry.location = course['location']
-  course_entry.quarter_credits = course['quarter_credits']
+  course_entry.quarter = course['quarter']
   course_entry.term = course['term']
-
+  course_entry.start_time = course['start_time']
+  course_entry.end_time = course['end_time']
+  course_entry.x_y_time = course['x_y_time']
   course_entry.save()
 
+end
+
+#Create Class Sessions
+
+courses.each_with_index do |course, index|
+	if course['x_y_time'] == "x"
+		x_schedule.each do |x_date|
+			class_session_entry = ClassSession.new()
+			class_session_entry.course_id = index
+			class_session_entry.class_date = Date.strptime(x_date, "%m-%d-%Y")
+			class_session_entry.start_time = DateTime.strptime(x_date + ' ' + course['start_time'], "%m-%d-%Y %H:%M")
+			class_session_entry.end_time = DateTime.strptime(x_date + ' ' + course['end_time'], "%m-%d-%Y %H:%M")
+
+			class_session_entry.save()
+		end
+	end
 end

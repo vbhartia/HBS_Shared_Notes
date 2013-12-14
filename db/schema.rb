@@ -23,9 +23,10 @@ ActiveRecord::Schema.define(:version => 20131210061056) do
   end
 
   create_table "class_sessions", :force => true do |t|
-    t.string   "title"
     t.string   "description"
-    t.datetime "class_date"
+    t.date     "class_date"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.integer  "course_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -43,14 +44,13 @@ ActiveRecord::Schema.define(:version => 20131210061056) do
     t.string   "title"
     t.string   "faculty"
     t.string   "term"
-    t.string   "quarter_credits"
-    t.string   "code"
+    t.string   "quarter"
     t.string   "section"
-    t.string   "day"
-    t.string   "time"
-    t.string   "location"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.time     "start_time"
+    t.time     "end_time"
+    t.string   "x_y_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "take_aways", :force => true do |t|

@@ -18,17 +18,15 @@ Add remove courses here!
 
       <th>Section</th>
 
-      <th>Day</th>
+      <th>X Y Schedule</th>
 
-      <th>Time</th>
+      <th>Start Time</th>
 
-      <th>Location</th>
-
-      <th>Code</th>
+      <th>End Time</th>
 
       <th>Term</th>
 
-      <th>Quarter/Credits</th>
+      <th>Quarter</th>
   
     </tr>
   </thead>  
@@ -58,19 +56,15 @@ Add remove courses here!
         </td>
 
         <td>
-      <%= course.day %>
+      <%= course.x_y_time %>
         </td>
 
         <td>
-      <%= course.time %>
+      <%= course.start_time %>
         </td>
 
         <td>
-      <%= course.location %>
-        </td>
-
-        <td>
-      <%= course.code %>
+      <%= course.end_time %>
         </td>
 
           <td>
@@ -78,7 +72,7 @@ Add remove courses here!
         </td>
 
           <td>
-      <%= course.quarter_credits %>
+      <%= course.quarter %>
         </td>
 
       </tr>

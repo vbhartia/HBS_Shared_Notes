@@ -1,9 +1,11 @@
 class CreateClassSessions < ActiveRecord::Migration
   def change
     create_table :class_sessions do |t|
-   	  t.string :title
    	  t.string :description 	  
-      t.datetime :class_date
+      t.date :class_date
+      t.datetime :start_time
+      t.datetime :end_time
+
    	  t.belongs_to :course 	
 
       t.timestamps

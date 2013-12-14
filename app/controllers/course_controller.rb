@@ -35,10 +35,18 @@ class CourseController < ApplicationController
 
   	course_id = params[:course_to_add]
 
+
+    puts "************************"
+    puts (params[:class_date] + " 16:29:30 +0100")
+    puts (params[:class_date] + " 16:29:30 +0100").to_datetime
+    date = DateTime.parse(params[:class_date])
+    puts 
+
   	class_session_to_add = ClassSession.new
   	class_session_to_add.title = params[:session_title]
   	class_session_to_add.description = params[:description]
-  	class_session_to_add.class_date = DateTime.now
+  	class_session_to_add.class_date = DateTime.parse(params[:class_date] + " 16:29:30")
+
 
   	class_session_to_add.course_id = course_id
 

@@ -16,7 +16,7 @@
 					<b>Professor:</b> <%= course.faculty %>
 				</td>
 				<td>
-					<b>Day, Time:</b> <%= course.day %>, <%= course.time %>
+					<b>X/Y, Time:</b> <%= course.x_y_time %>, <%= course.start_time %>
 				</td>
 				<td>
 					<b>Section:</b> <%= course.section %>
@@ -26,7 +26,7 @@
 	</div>	
 
 	<div class='container_content container_footer_border'>
-		<div class=''>
+		<div class='	'>
 
 		<!-- Render class session -->	
 			<% unless course.class_sessions.count == 0 %>

@@ -1,6 +1,6 @@
 <%= nav_bar_render(['My Classes', 
 					@course.title, 
-					to_day_of_week_and_date(@class_session.class_date) + ': ' + @class_session.title],
+					to_day_of_week_and_date(@class_session.class_date)],
 					[dashboard_path, 
 					course_path(@course), 
 					class_session_home_path(@course, @class_session)]
