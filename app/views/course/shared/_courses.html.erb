@@ -34,10 +34,6 @@
 
 				<%= link_to to_day_of_week_and_date(@class_session_to_render.class_date), class_session_home_path(course.id, @class_session_to_render.id) %>
 
-				<h4>
-				<%= link_to @current_course.start_time.strftime("%H:%M"), class_session_home_path(course.id, @class_session_to_render.id) %>	
-				</h4>
-
 				<hr/>
 
 				<% unless @class_session_to_render.take_aways.count == 0 %>
